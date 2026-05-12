@@ -18,7 +18,6 @@ class _AddProductPageState extends State<AddProductPage> {
   final _priceCtrl = TextEditingController();
   final _descCtrl = TextEditingController();
 
-  // ─── Colors ─────────────────────────────────────────────────────────────
   static const _bg = Color(0xFF0C0C0C);
   static const _green = Color(0xFF00FF41);
   static const _dimGreen = Color(0xFF008F11);
@@ -190,7 +189,7 @@ class _AddProductPageState extends State<AddProductPage> {
     );
   }
 
-  // ─── Top Bar ─────────────────────────────────────────────────────────────
+  // Top Bar
   Widget _buildTopBar() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
@@ -218,7 +217,7 @@ class _AddProductPageState extends State<AddProductPage> {
     );
   }
 
-  // ─── Field ───────────────────────────────────────────────────────────────
+  // Field
   Widget _buildField({
     required String label,
     required String hint,
@@ -275,7 +274,7 @@ class _AddProductPageState extends State<AddProductPage> {
     );
   }
 
-  // ─── Submit Button ────────────────────────────────────────────────────────
+  // Submit Button 
   Widget _buildSubmitButton() {
     return Consumer<ProductController>(
       builder: (_, ctrl, __) {
@@ -322,7 +321,7 @@ class _AddProductPageState extends State<AddProductPage> {
     );
   }
 
-  // ─── Helper ─────────────────────────────────────────────────────────────
+  // Helper
   TextStyle _mono({required Color color, double size = 12, bool bold = false}) {
     return GoogleFonts.robotoMono(
       color: color,

@@ -11,7 +11,7 @@ void main() {
 
   runApp(
     DevicePreview(
-      enabled: true, // ubah jadi false saat production
+      enabled: true,
       builder: (context) => MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => AuthController()),
@@ -25,8 +25,6 @@ void main() {
 
 class PbmApp extends StatelessWidget {
   const PbmApp({super.key});
-
-  // ─── Color Palette ───────────────────────────────────────────────────────
   static const _bg = Color(0xFF0C0C0C);
   static const _green = Color(0xFF00FF41);
   static const _surface = Color(0xFF111111);
@@ -38,7 +36,7 @@ class PbmApp extends StatelessWidget {
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
 
-      title: 'PBM Task Manager',
+      title: 'Product Catalog',
       debugShowCheckedModeBanner: false,
 
       theme: ThemeData(

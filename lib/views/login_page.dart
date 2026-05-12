@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage>
     );
   }
 
-  // ─── Header ─────────────────────────────────────────────────────────────
+  // Header
   Widget _buildHeader() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +111,7 @@ class _LoginPageState extends State<LoginPage>
     );
   }
 
-  // ─── Input Section ──────────────────────────────────────────────────────
+  // Input Section 
   Widget _buildInputSection() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -199,7 +199,7 @@ class _LoginPageState extends State<LoginPage>
     );
   }
 
-  // ─── Login Button ────────────────────────────────────────────────────────
+  // Login Button
   Widget _buildLoginButton() {
     return Consumer<AuthController>(
       builder: (_, ctrl, __) {
@@ -254,7 +254,7 @@ class _LoginPageState extends State<LoginPage>
     );
   }
 
-  // ─── Error Section ──────────────────────────────────────────────────────
+  // Error Section
   Widget _buildErrorSection() {
     return Consumer<AuthController>(
       builder: (_, ctrl, __) {
@@ -283,7 +283,7 @@ class _LoginPageState extends State<LoginPage>
     );
   }
 
-  // ─── Helper ─────────────────────────────────────────────────────────────
+  // Helper
   TextStyle _monoStyle({
     required Color color,
     double fontSize = 12,

@@ -16,7 +16,7 @@ class ProductListPage extends StatefulWidget {
 }
 
 class _ProductListPageState extends State<ProductListPage> {
-  // ─── Colors ─────────────────────────────────────────────────────────────
+  
   static const _bg = Color(0xFF0C0C0C);
   static const _green = Color(0xFF00FF41);
   static const _dimGreen = Color(0xFF008F11);
@@ -79,10 +79,9 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  // ─── Top Bar ─────────────────────────────────────────────────────────────
+  // Top Bar
   Widget _buildTopBar() {
     return Container(
-      // Memastikan container mengambil seluruh lebar yang tersedia
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: const BoxDecoration(
@@ -91,21 +90,17 @@ class _ProductListPageState extends State<ProductListPage> {
       ),
       child: Row(
         children: [
-          // 1. Judul menggunakan Expanded agar 'memakan' sisa ruang
-          // Ini yang akan mendorong tombol ke pojok kanan
           Expanded(
             child: Text(
               '// PRODUCT CATALOG',
               style: _mono(color: _green, size: 13, bold: true),
               overflow:
-                  TextOverflow.ellipsis, // Potong teks jika layar sangat sempit
+                  TextOverflow.ellipsis,
               maxLines: 1,
             ),
           ),
 
           const SizedBox(width: 8),
-
-          // 2. Grup Tombol dalam Row yang ukurannya pas (min)
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -148,7 +143,7 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  // ─── Sub Header ─────────────────────────────────────────────────────────
+  // Sub Header
   Widget _buildSubHeader() {
     return Consumer<ProductController>(
       builder: (_, ctrl, __) {
@@ -169,7 +164,7 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  // ─── Body ────────────────────────────────────────────────────────────────
+  // Body
   Widget _buildBody() {
     return Consumer<ProductController>(
       builder: (_, ctrl, __) {
@@ -260,7 +255,6 @@ class _ProductListPageState extends State<ProductListPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header row
           Row(
             children: [
               Text(
@@ -280,7 +274,6 @@ class _ProductListPageState extends State<ProductListPage> {
           const SizedBox(height: 8),
           Divider(color: _border, height: 1),
           const SizedBox(height: 8),
-          // Price
           Row(
             children: [
               Text('PRICE  : ', style: _mono(color: _textMuted, size: 11)),
@@ -291,7 +284,6 @@ class _ProductListPageState extends State<ProductListPage> {
             ],
           ),
           const SizedBox(height: 4),
-          // Description
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -307,7 +299,6 @@ class _ProductListPageState extends State<ProductListPage> {
             ],
           ),
           const SizedBox(height: 4),
-          // Created at
           if (p.createdAt.isNotEmpty)
             Row(
               children: [
@@ -325,7 +316,7 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  // ─── FAB ────────────────────────────────────────────────────────────────
+  // FAB 
   Widget _buildFab() {
     return FloatingActionButton(
       onPressed: _goToAddProduct,
@@ -336,7 +327,7 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  // ─── Retry Button ────────────────────────────────────────────────────────
+  // Retry Button 
   Widget _retryButton() {
     return GestureDetector(
       onTap: _loadProducts,
@@ -348,7 +339,7 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  // ─── Confirm Logout Dialog ───────────────────────────────────────────────
+  // Confirm Logout Dialog 
   Widget _buildConfirmDialog() {
     return Dialog(
       backgroundColor: _surface,
@@ -405,7 +396,7 @@ class _ProductListPageState extends State<ProductListPage> {
     );
   }
 
-  // ─── Helper ─────────────────────────────────────────────────────────────
+  // Helper 
   TextStyle _mono({required Color color, double size = 12, bool bold = false}) {
     return GoogleFonts.robotoMono(
       color: color,

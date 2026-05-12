@@ -6,7 +6,7 @@ import '../models/product_model.dart';
 class ApiService {
   static const String _baseUrl = 'https://task.itprojects.web.id';
 
-  // ─── AUTH ───────────────────────────────────────────────────────────────
+  // AUTH
   static Future<Map<String, dynamic>> login(
     String username,
     String password,
@@ -47,7 +47,7 @@ class ApiService {
     }
   }
 
-  // ─── PRODUCTS ───────────────────────────────────────────────────────────
+  // PRODUCTS
   static Future<List<ProductModel>> getProducts(String token) async {
     final url = Uri.parse('$_baseUrl/api/products');
 
@@ -115,7 +115,7 @@ class ApiService {
     }
   }
 
-  // ─── SUBMIT TUGAS ────────────────────────────────────────────────────────
+  // SUBMIT TUGAS
   static Future<Map<String, dynamic>> submitTugas(
     String token,
     String name,

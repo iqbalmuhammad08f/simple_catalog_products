@@ -17,7 +17,7 @@ class AuthController extends ChangeNotifier {
   String? get token => _token;
   bool get isLoggedIn => _token != null;
 
-  // ─── Login ──────────────────────────────────────────────────────────────
+  // Login 
   Future<bool> login(String username, String password) async {
     _isLoading = true;
     _errorMessage = null;
@@ -40,7 +40,7 @@ class AuthController extends ChangeNotifier {
     return false;
   }
 
-  // ─── Load saved token ───────────────────────────────────────────────────
+  // Load saved token
   Future<bool> loadToken() async {
     final saved = await _storage.read(key: 'auth_token');
     if (saved != null) {
@@ -51,7 +51,7 @@ class AuthController extends ChangeNotifier {
     return false;
   }
 
-  // ─── Logout ─────────────────────────────────────────────────────────────
+  // Logout
   Future<void> logout() async {
     await _storage.delete(key: 'auth_token');
     _token = null;

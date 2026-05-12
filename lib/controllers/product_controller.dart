@@ -13,7 +13,7 @@ class ProductController extends ChangeNotifier {
   bool get isSubmitting => _isSubmitting;
   String? get errorMessage => _errorMessage;
 
-  // ─── Fetch all products ─────────────────────────────────────────────────
+  // Fetch all products
   Future<void> fetchProducts(String token) async {
     _isLoading = true;
     _errorMessage = null;
@@ -29,7 +29,7 @@ class ProductController extends ChangeNotifier {
     notifyListeners();
   }
 
-  // ─── Add product ────────────────────────────────────────────────────────
+  // Add product
   Future<Map<String, dynamic>> addProduct(
     String token,
     String name,
@@ -42,7 +42,7 @@ class ProductController extends ChangeNotifier {
     final result = await ApiService.addProduct(token, name, price, description);
 
     if (result['success'] == true) {
-      await fetchProducts(token); // refresh list
+      await fetchProducts(token);
     }
 
     _isSubmitting = false;
@@ -50,7 +50,7 @@ class ProductController extends ChangeNotifier {
     return result;
   }
 
-  // ─── Submit Tugas ────────────────────────────────────────────────────────
+  // Submit Tugas
   Future<Map<String, dynamic>> submitTugas(
     String token,
     String name,

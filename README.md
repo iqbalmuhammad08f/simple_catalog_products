@@ -1,7 +1,6 @@
 # Flutter App
 **Tugas Praktikum Pemrograman Berbasis Mobile**
 
----
 
 Berikut adalah tampilan dari setiap halaman dalam aplikasi:
 
@@ -9,28 +8,27 @@ Berikut adalah tampilan dari setiap halaman dalam aplikasi:
   <table>
     <tr>
       <td align="center">
-        <img src="./login.png" width="200" alt="Halaman Login"/>
+        <img src="./screenshot/login.png" width="200" alt="Halaman Login"/>
         <br/><b>Login Page</b>
       </td>
       <td align="center">
-        <img src="./product%20catalog.png" width="200" alt="Katalog Produk"/>
+        <img src="./screenshot/product catalog.png" width="200" alt="Katalog Produk"/>
         <br/><b>Product Catalog</b>
       </td>
     </tr>
     <tr>
       <td align="center">
-        <img src="./add%20product.png" width="200" alt="Tambah Produk"/>
+        <img src="./screenshot/add product.png" width="200" alt="Tambah Produk"/>
         <br/><b>Add Product</b>
       </td>
       <td align="center">
-        <img src="./submit%20tugas.png" width="200" alt="Halaman Submit Tugas"/>
+        <img src="./screenshot/submit tugas.png" width="200" alt="Halaman Submit Tugas"/>
         <br/><b>Submit Tugas</b>
       </td>
     </tr>
   </table>
 </div>
 
----
 
 ## Struktur Project
 ```

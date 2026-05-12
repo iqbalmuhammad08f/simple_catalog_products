@@ -21,8 +21,7 @@ class _SubmitPageState extends State<SubmitPage> {
 
   bool _isSubmitted = false;
   Map<String, dynamic>? _submitResult;
-
-  // ─── Colors ─────────────────────────────────────────────────────────────
+  
   static const _bg = Color(0xFF0C0C0C);
   static const _green = Color(0xFF00FF41);
   static const _dimGreen = Color(0xFF008F11);
@@ -43,8 +42,6 @@ class _SubmitPageState extends State<SubmitPage> {
 
   Future<void> _handleSubmit() async {
     if (!_formKey.currentState!.validate()) return;
-
-    // Konfirmasi sebelum submit — tidak bisa diedit setelah submit
     final confirm = await _showConfirmDialog();
     if (confirm != true) return;
 
@@ -84,14 +81,6 @@ class _SubmitPageState extends State<SubmitPage> {
                 style: _mono(color: _amber, size: 13, bold: true),
               ),
               const SizedBox(height: 12),
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  border: Border.all(color: _amber.withOpacity(0.4)),
-                  color: _amber.withOpacity(0.05),
-                ),
-              ),
-              const SizedBox(height: 16),
               Text(
                 'Pastikan semua data sudah benar.\nLanjutkan submit?',
                 style: _mono(color: _textLight, size: 12),
@@ -158,7 +147,7 @@ class _SubmitPageState extends State<SubmitPage> {
     );
   }
 
-  // ─── Top Bar ─────────────────────────────────────────────────────────────
+  // Top Bar
   Widget _buildTopBar() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
@@ -186,7 +175,7 @@ class _SubmitPageState extends State<SubmitPage> {
     );
   }
 
-  // ─── Form ────────────────────────────────────────────────────────────────
+  // Form 
   Widget _buildForm() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
@@ -293,7 +282,7 @@ class _SubmitPageState extends State<SubmitPage> {
     );
   }
 
-  // ─── Success Screen ──────────────────────────────────────────────────────
+  // Success Screen 
   Widget _buildSuccessScreen() {
     return Center(
       child: Padding(
@@ -327,14 +316,6 @@ class _SubmitPageState extends State<SubmitPage> {
                   _successRow('DESC ', _descCtrl.text),
                   _successRow('REPO ', _githubCtrl.text),
                 ],
-              ),
-            ),
-            const SizedBox(height: 16),
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                border: Border.all(color: _dimGreen.withOpacity(0.4)),
-                color: _dimGreen.withOpacity(0.05),
               ),
             ),
             const SizedBox(height: 24),
@@ -376,7 +357,7 @@ class _SubmitPageState extends State<SubmitPage> {
     );
   }
 
-  // ─── Submit Button ────────────────────────────────────────────────────────
+  // Submit Button 
   Widget _buildSubmitButton() {
     return Consumer<ProductController>(
       builder: (_, ctrl, __) {
@@ -422,7 +403,7 @@ class _SubmitPageState extends State<SubmitPage> {
     );
   }
 
-  // ─── Field ───────────────────────────────────────────────────────────────
+  // Field 
   Widget _buildField({
     required String label,
     required String hint,
@@ -477,7 +458,7 @@ class _SubmitPageState extends State<SubmitPage> {
     );
   }
 
-  // ─── Helper ─────────────────────────────────────────────────────────────
+  // Helper 
   TextStyle _mono({required Color color, double size = 12, bool bold = false}) {
     return GoogleFonts.robotoMono(
       color: color,
