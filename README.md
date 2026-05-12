@@ -1,33 +1,56 @@
-# PBM Task Manager — Flutter App
-**Tugas Praktikum Pemrograman Berbasis Mobile 2026**
+# Flutter App
+**Tugas Praktikum Pemrograman Berbasis Mobile**
 
 ---
 
-## Struktur Project (MVC)
+Berikut adalah tampilan dari setiap halaman dalam aplikasi:
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="./login.png" width="200" alt="Halaman Login"/>
+        <br/><b>Login Page</b>
+      </td>
+      <td align="center">
+        <img src="./product%20catalog.png" width="200" alt="Katalog Produk"/>
+        <br/><b>Product Catalog</b>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="./add%20product.png" width="200" alt="Tambah Produk"/>
+        <br/><b>Add Product</b>
+      </td>
+      <td align="center">
+        <img src="./submit%20tugas.png" width="200" alt="Halaman Submit Tugas"/>
+        <br/><b>Submit Tugas</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+## Struktur Project
 ```
 lib/
 ├── models/
-│   ├── user_model.dart       ← Model data user
-│   └── product_model.dart    ← Model data produk
+│   ├── user_model.dart      
+│   └── product_model.dart   
 ├── controllers/
-│   ├── auth_controller.dart     ← Logika login & token
-│   └── product_controller.dart  ← Logika CRUD produk
+│   ├── auth_controller.dart     
+│   └── product_controller.dart  
 ├── views/
-│   ├── login_page.dart          ← Halaman login
-│   ├── product_list_page.dart   ← Halaman daftar produk
-│   └── add_product_page.dart    ← Halaman tambah produk
+│   ├── login_page.dart          
+│   ├── product_list_page.dart  
+│   └── add_product_page.dart   
+|   └── submit_page.dart
 ├── services/
-│   └── api_service.dart         ← HTTP calls ke API
+│   └── api_service.dart         
 └── main.dart
 ```
 
-## Fitur
-- **Login** dengan NIM sebagai username & password
-- **Simpan token** menggunakan `flutter_secure_storage`
-- **Tampil daftar produk** (GET /api/products)
-- **Tambah produk** (POST /api/products) dengan live preview
-- **Logout** dengan konfirmasi dialog
-- **Pull-to-refresh** pada halaman list
 
 ## Setup & Cara Menjalankan
 
@@ -41,35 +64,8 @@ flutter --version
 flutter pub get
 ```
 
-### 3. Konfigurasi Android (wajib untuk flutter_secure_storage)
-Edit `android/app/build.gradle`, pastikan `minSdkVersion` minimal **23**:
-```gradle
-android {
-    defaultConfig {
-        minSdkVersion 23
-    }
-}
-```
-
-### 4. Jalankan aplikasi
+### 3. Jalankan aplikasi
 ```bash
 flutter run
 ```
 
-## API
-- **Base URL:** `https://task.itprojects.web.id`
-- **Login:** `POST /api/auth/login`
-- **Get Products:** `GET /api/products`
-- **Add Product:** `POST /api/products`
-- **Submit Tugas:** `POST /api/products/submit`
-
-## Dependencies
-| Package | Kegunaan |
-|---|---|
-| `http` | HTTP request ke API |
-| `flutter_secure_storage` | Simpan token secara aman |
-| `provider` | State management (MVC) |
-| `google_fonts` | Font RobotoMono (retro theme) |
-
-## NIM
-242410102036
