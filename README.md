@@ -1,6 +1,4 @@
 # Flutter App
-**Tugas Praktikum Pemrograman Berbasis Mobile**
-
 
 Berikut adalah tampilan dari setiap halaman dalam aplikasi:
 
